@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <style>
+      .lead {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        margin-top: 10px;
+        background-color: #f6f6f6;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Our Leads</h2>
+      <h5><a href="/leads/create">Create new</a></h5>
+      <div class="lead">
+        {% for lead in leads %}
+
+        <li>
+          <a href="/leads/{{lead.pk}}/"
+            >{{lead.first_name}} {{lead.last_name}}</a
+          >
+        </li>
+
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
